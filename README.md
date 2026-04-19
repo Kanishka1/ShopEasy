@@ -1,6 +1,6 @@
 # 🛍️ Full Stack E-Commerce App
 
-A production-ready full stack e-commerce application built with:
+A full stack e-commerce application built with:
 
 ## 🚀 Features
 
