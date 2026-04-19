@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../utils/CartContext";
 import { useTheme } from "../utils/ThemeContext";
-import { useSearch } from "../utils/searchContext";
+import { useSearch } from "../utils/SearchContext";
 import { useEffect, useState } from "react";
 import { useAuth } from "../utils/AuthContext";
 const Header = () => {

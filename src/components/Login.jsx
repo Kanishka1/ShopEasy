@@ -55,7 +55,7 @@ function Login() {
 					</div>
 
 					{/* Heading */}
-					<h2 className="text-2xl font-bold text-center text-gray-800 dark:text-white">
+					<h2 className="text-2xl font-bold text-center text-gray-800 dark:text-white" data-testid="welcome">
 						Welcome Back 👋
 					</h2>
 					<p className="text-gray-500 dark:text-gray-400 text-center mb-6">
@@ -68,10 +68,12 @@ function Login() {
 							type="email"
 							placeholder="Email"
 							className="input focus:ring-2 focus:ring-blue-500"
+							data-testid="email-input"
 							onChange={(e) => setForm({ ...form, email: e.target.value })}
 						/>
 
 						<input
+							data-testid="password-input"
 							type="password"
 							placeholder="Password"
 							className="input focus:ring-2 focus:ring-blue-500"
@@ -83,6 +85,7 @@ function Login() {
 					<button
 						onClick={handleLogin}
 						disabled={isInvalid}
+						data-testid="login-btn"
 						className={`w-full mt-6 py-2.5 rounded-lg font-medium transition
               ${
 								isInvalid

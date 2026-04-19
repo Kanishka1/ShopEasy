@@ -3,14 +3,14 @@ import Header from "./Header";
 import { useNavigate } from "react-router-dom";
 import { placeOrderApi } from "../service/orderApi";
 import toast from "react-hot-toast";
-import { useSearch } from "../utils/searchContext";
+import { useSearch } from "../utils/SearchContext";
 
 export default function Cart() {
 	const { search } = useSearch();
 	const { cart = [], addToCart, removeFromCart } = useCart();
 	const navigate = useNavigate();
 	const filteredProducts = cart.filter((p) =>
-		p.product.name.toLowerCase().includes(search.toLowerCase()),
+		p.product.name.toLowerCase().includes(search?.toLowerCase()),
 	);
 
 	const decreaseQty = (item) => {
@@ -77,7 +77,7 @@ export default function Cart() {
 
 										{/* Details */}
 										<div className="flex flex-col flex-1">
-											<h3 className="font-semibold text-gray-800 dark:text-white">
+											<h3 className="font-semibold text-gray-800 dark:text-white" data-testid={`product-name-${item.productId}`}>
 												{item.product?.name}
 											</h3>
 
@@ -89,17 +89,19 @@ export default function Cart() {
 											<div className="flex items-center gap-3 mt-3">
 												<button
 													onClick={() => decreaseQty(item)}
+													data-testid={`decrease-${item.productId}`}
 													className="w-8 h-8 rounded-full bg-gray-200 hover:bg-gray-300 dark:bg-gray-600 dark:hover:bg-gray-500 flex items-center justify-center"
 												>
 													-
 												</button>
 
-												<span className="font-medium dark:text-white">
+												<span className="font-medium dark:text-white" data-testid={`qty-${item.productId}`}>
 													{item.quantity}
 												</span>
 
 												<button
 													onClick={() => increaseQty(item)}
+													data-testid={`increase-${item.productId}`}
 													className="w-8 h-8 rounded-full bg-gray-200 hover:bg-gray-300 dark:bg-gray-600 dark:hover:bg-gray-500 flex items-center justify-center"
 												>
 													+
@@ -108,6 +110,7 @@ export default function Cart() {
 
 											{/* Remove */}
 											<button
+												data-testid={`remove-${item.productId}`}
 												onClick={() => removeFromCart(item.productId)}
 												className="text-red-500 text-sm mt-2 hover:underline w-fit"
 											>
@@ -133,12 +136,13 @@ export default function Cart() {
 
 						<div className="flex justify-between text-xl font-semibold mt-4 dark:text-white">
 							<span>Total</span>
-							<span>₹{total}</span>
+							<span data-testid="cart-total">₹{total}</span>
 						</div>
 
 						<button
 							onClick={() => navigate("/checkout")}
 							className="btn w-full mt-5 bg-green-600 text-white"
+							data-testid="checkout-btn"
 						>
 							Proceed to Checkout
 						</button>

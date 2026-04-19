@@ -9,7 +9,7 @@ import { CartProvider } from "../utils/CartContext";
 import AdminDashBoard from "./AdminDashBoard";
 import Cart from "./Cart";
 import { ThemeProvider } from "../utils/ThemeContext";
-import { SearchProvider } from "../utils/searchContext";
+import { SearchProvider } from "../utils/SearchContext";
 import { AuthProvider } from "../utils/AuthContext";
 import { Toaster } from "react-hot-toast";
 import OrderHistory from "./OrderHistory";

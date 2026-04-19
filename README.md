@@ -11,7 +11,7 @@ A production-ready full stack e-commerce application built with:
 - 📊 Admin Dashboard (CRUD products)
 - 🌙 Dark Mode
 - 🔔 Toast Notifications
-
+- Tested with RTL and Vitest
 ## 🧱 Tech Stack
 
 ### Frontend

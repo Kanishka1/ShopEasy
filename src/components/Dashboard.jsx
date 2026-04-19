@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getAllProducts } from "../service/productApi";
 import Header from "./Header";
 import { useCart } from "../utils/CartContext";
-import { useSearch } from "../utils/searchContext";
+import { useSearch } from "../utils/SearchContext";
 
 const Product = ({ id, image, name, price, stock }) => {
 	const { addToCart } = useCart();
